@@ -1,0 +1,51 @@
+function client(name, balance) {
+    this.name = name;
+    this.balance = balance;
+}
+client.prototype.membership = function() {
+    if (this.balance > 1000) {
+        name = "gold"
+    } else if (this.balance > 500) {
+        name = this.name + " is platinum"
+    } else {
+        name = "normal";
+    }
+    return name;
+}
+
+client.prototype.getInfo = function() {
+    return `name: ${this.name}, balance: ${this.balance}, membership : ${this.membership()}`;
+}
+client.prototype.widthDrow = function(amount) {
+    this.balance -= amount;
+}
+client.prototype.diposite = function(amount) {
+    this.balance += amount;
+}
+client.prototype.getBalance = function() {
+    return this.balance;
+}
+
+const person = new client('aunshon', 500);
+
+function Business(name, balance, phoen, category) {
+    client.call(this, name, balance);
+    this.phoen = phoen;
+    this.category = category;
+}
+//inheritance the prototype of client
+Business.prototype = Object.create(client.prototype);
+//return the constructor as business
+Business.prototype.constructor = Business;
+//making prototypw of Business
+Business.prototype.getBusinessInfoff = function() {
+        return `name:${this.name}, balance:${this.balance}, phone:${this.phoen}, category:${this.category}, mambership:${this.membership()}`;
+    }
+    //creating object of Business and send value
+const firt = new Business('auh', 10, "01686", 'Education');
+console.log(firt);
+console.log(firt.getInfo());
+// console.log(firt.diposite(50));
+console.log(firt.getBalance());
+console.log("--------------------------");
+console.log(firt.getBusinessInfoff());
