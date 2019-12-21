@@ -20,3 +20,47 @@ client.prototype.getInfo = function() {
 const person = new client('aunshon', 500);
 // console.log(person.membership());
 console.log(person);
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////more ///
+function client(name, balance) {
+    this.name = name;
+    this.balance = balance;
+}
+client.prototype.membership = function() {
+    if (this.balance > 1000) {
+        name = "gold"
+    } else if (this.balance > 500) {
+        name = this.name + " is platinum"
+    } else {
+        name = "normal";
+    }
+    return name;
+}
+
+client.prototype.getInfo = function() {
+    return `name: ${this.name}, balance: ${this.balance}, membership : ${this.membership()}`;
+}
+client.prototype.widthDrow = function(amount) {
+    this.balance -= amount;
+}
+client.prototype.diposite = function(amount) {
+    this.balance += amount;
+}
+client.prototype.getBalance = function() {
+    return this.balance;
+}
+
+const person = new client('aunshon', 500);
+// console.log(person.membership());
+console.log(person.getInfo());
+console.log(person.widthDrow(400));
+console.log(person.getInfo());
+console.log(person.diposite(900));
+console.log(person.getInfo());
