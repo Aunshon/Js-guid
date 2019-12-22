@@ -1,0 +1,41 @@
+class client {
+    constructor(name, balance) {
+        this.name = name;
+        this.balance = balance;
+    }
+
+    getCliendInfo() {
+        return `Hello ${this.name} ! Your Balance Is : ${this.balance};`
+    }
+    widthrow(amount) {
+        this.balance -= amount;
+    }
+    diposit(amount) {
+        this.balance += amount;
+    }
+    membership() {
+        let member;
+        if (this.balance > 1000) {
+            member = "gold";
+        } else if (this.balance >= 500) {
+            member = "platinum"
+        } else {
+            member = "normal";
+        }
+        return member;
+    }
+
+    static wolcome() {
+        return `welcome ${this.name}`;
+    }
+}
+
+const aun = new client('aunshon', 4000);
+console.log(aun);
+console.log(aun.getCliendInfo());
+aun.diposit(500)
+console.log(aun.getCliendInfo());
+aun.widthrow(500)
+console.log(aun.getCliendInfo());
+
+console.log(client.wolcome());
