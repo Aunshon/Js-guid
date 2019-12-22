@@ -1,0 +1,36 @@
+const client = {
+    getBalance: function() {
+        return `hello ${this.name} ! Your balance is ${this.balance}`;
+    },
+    widthrow: function(amount) {
+        this.balance -= amount;
+    },
+    diposit: function(amount) {
+        this.balance += amount;
+    },
+}
+
+//creating objact of client
+
+
+const aun = Object.create(client);
+aun.name = "aunshon";
+aun.balance = "1000";
+
+console.log(aun);
+console.log(aun.getBalance());
+aun.widthrow(400);
+console.log(aun.getBalance());
+aun.diposit(1000);
+console.log(aun.getBalance());
+console.log("-------------------------------");
+
+
+//another way to create object
+
+
+const hasan = Object.create(client, {
+    name: { value: "hahan" },
+    balance: { value: 5555 }
+});
+console.log(hasan);
