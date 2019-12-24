@@ -1,0 +1,46 @@
+class Client {
+    constructor(name, balance) {
+        this.name = name;
+        this.balance = balance;
+    }
+    getClientInfo() {
+        return `Hello ${this.name} ! Your Balance Is : ${this.balance}`;
+    }
+    widthrow(amount) {
+        return this.balance -= amount;
+    }
+    diposit(amount) {
+        return this.balance += amount;
+    }
+    memberShip() {
+        var title;
+        if (this.balance > 1000) {
+            title = "Gold";
+        } else if (this.balance <= 500) {
+            title = "platimun";
+        } else {
+            title = "Normal"
+        }
+        return title;
+    }
+    static welcome() {
+        return `Hello ${this.name} ! Welcome To Our Bank `;
+    }
+}
+
+class Business extends Client {
+    constructor(name, balance, phone, category) {
+        super(name, balance);
+        this.phone = phone;
+        this.category = category;
+    }
+}
+
+var aun = new Business("Aunshon", 200, "01686222943", "Airtel");
+
+console.log(aun);
+console.log(aun.getClientInfo());
+
+console.log(aun.memberShip());
+console.log(Business.welcome());
+console.log(Client.welcome());
