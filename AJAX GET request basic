@@ -1,0 +1,40 @@
+//Rule Start  
+        //First create request object to make request
+    var xhr = new XMLHttpRequest();
+    
+        //open method is to initiates or holds parameters about the request 'first parameter request Type : get' , 'secend parameter : url' ,
+        //last paremeter is ascyncronus value is true'.
+    xhr.open('get', 'https://jsonplaceholder.typicode.com/posts', true);
+    
+        //onload method does what we want to do with the responce of the request
+    xhr.onload = function() {
+          //if the status is 200 means , request successfully done and we can retrive data now
+        if (this.status === 200) {
+          
+        }
+          //else we can show an error message
+        else{
+        
+        }
+    }
+        //send method trigers or sends the request without send method request will not work 
+    xhr.send();
+//Rule End
+
+//EXAMPLE :--\
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('get', 'https://jsonplaceholder.typicode.com/posts', true);
+    xhr.onload = function() {
+        if (this.status === 200) {
+            console.log("Status : " + this.status);
+            var resposce = JSON.parse(this.responseText);
+            var result = document.getElementById('result');
+            var content = '';
+            resposce.forEach(function(data) {
+                content += `<h1>${data.title}</h1><p>${data.body}</p>`;
+            });
+            result.innerHTML = content;
+        }
+    }
+    xhr.send();
