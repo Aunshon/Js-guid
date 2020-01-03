@@ -1,0 +1,72 @@
+//basic
+
+//Example 1
+
+
+const myFunction = () => {
+    console.log("Hi ! i am here");
+}
+myFunction();
+
+
+//Or.......
+
+
+const myFunction = () => console.log("Hi ! i am here");
+myFunction();
+//or
+const myFunction = () => "Hi ! i am here";
+console.log(myFunction());
+
+
+//If you have only one prameter and one line to the function body  to use on your function
+
+
+const myFunction = (tech) => console.log(`i'm learning ${tech}`);
+myFunction("JavaScript");
+//or
+const myFunction = (tech) => console.log(`i'm learning ${tech}`);
+myFunction("JavaScript");
+
+
+//If you have multiple parameter and multiple line to execute on the function body
+
+const myFunction = (name,tech) => {
+    console.log(`Hi ! ${name}`);
+    console.log(`You are learning ${tech}`);
+}
+myFunction('aunshon','JavaScript');
+
+//Advanced Example.............................
+
+
+//normal function..........
+const myArray = ['aunshon', 'hasan', 'shawon', 'islam'];
+const myFunction = myArray.map(function(data) {
+    return data.length;
+});
+
+console.log(myFunction);
+
+//in arrow function.........
+const myArray = ['aunshon', 'hasan', 'shawon', 'islam'];
+    //here we have one paremeter \
+    //no need return key work (return data.length) this is error (data.length) is currect in arrow function
+const myFunction = map(data => data.length);
+
+
+//Arrow function in ForEach
+
+const myArray = ['aunshon', 'hasan', 'shawon', 'islam'];
+myArray.forEach( data => console.log(data));
+
+
+
+
+
+
+
+
+
+
+
