@@ -1,0 +1,33 @@
+//basic concept of callback start
+
+variable.forEach(manus);
+
+ function manus(data, koi) {
+     console.log(data + koi);
+ }
+ 
+//basic concept of callback end 
+
+
+
+let variable = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+
+function addNewdata(data, callback) {
+    setTimeout(function() {
+        variable.push(data);
+        callback();
+    }, 2000);
+}
+
+function initiateDownload() {
+    setTimeout(function() {
+        let html = '';
+        variable.forEach(function(data) {
+            html += `<li>${data}</li>`;
+        });
+        document.body.innerHTML = html;
+    }, 1000);
+}
+
+initiateDownload();
+addNewdata('aunshon', initiateDownload);
