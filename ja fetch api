@@ -1,0 +1,38 @@
+//basic use & structure of fatch   
+   fetch('https://url.......')
+        .then(function(responce) {
+            //returning the both success and fail responce after hitting the url
+            return responce.text();
+            //if url returns json data then use:- return responce.json();
+        })
+        .then(function(data) {
+            //getting success data
+            console.log(data);
+        })
+        .catch(function(data) {
+            //getting error data
+            console.log(data);
+        });
+////basic use & structure of fatch End        
+        
+        
+//Example:------------------------------------------------
+
+document.getElementById('button3').addEventListener('click', function() {
+    fetch('https://picsum.photos/v2/list?page=2&limit=10')
+        .then(function(responce) {
+            return responce.json();
+        })
+        .then(function(data) {
+            let html = '';
+            console.log(data);
+
+            data.forEach(function(item) {
+                html += `<a target="_blank" href="${item.download_url}">Image</a>${item.author}<br>`;
+            });
+            document.getElementById('result').innerHTML = html;
+        })
+        .catch(function(data) {
+            console.log(data);
+        });
+});
