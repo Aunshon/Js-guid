@@ -1,0 +1,50 @@
+//promise is a fnctionality is successfully done or not in syncronus operation
+
+
+//promise bsic structure start.............................................................................................
+
+
+  //creating promise object and making my functionality into it
+  let promiseVariable = new Promise(function( resolve , reject ){
+  
+      //doing my my functionality
+      let testVariable = true;
+      if(testVariable){
+          //when the task is successfully done
+          resolve("Task is Successfull...");
+      }else{
+          //when task is failed
+          reject("Task is failed...");
+      }
+      
+  });
+  
+  //if you print promiseVariable on console you will probebly see --Promise Pending Message-- you have to use then and catch method 
+  //to get exact resolve or reject message.
+  //then holds the success data and catch holds the failure data
+  
+  promiseVariable.then(function(result){
+      console.log(result);
+  }).catch(function(result){
+      console.log(result);
+  });
+
+
+//promise bsic structure end..................................................................................................
+
+//Example :------------------------------------------------------------------------------
+
+let newPromiss = new Promise(function(resolve, reject) {
+    let discount = false;
+    if (discount) {
+        resolve("Discount Applied...");
+    } else {
+        reject("Not Applied...");
+    }
+});
+
+newPromiss.then(function(result) {
+    console.log(result);
+}).catch(function(result) {
+    console.log(result);
+});
