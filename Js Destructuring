@@ -161,7 +161,7 @@ orderCheck(true, { paymentBy: "Cash", name: "aun", amount: 1000 });
 // in other way...................................
 
 
-function orderCheck(status, { paymentBy, name = "No Name", amount = 0 }) {      //using name and amount default value
+function orderCheck(status, { paymentBy, name = "No Name", amount = 0 } = {} ) {      //using name and amount default value
     console.log(paymentBy);
     console.log(name);
     console.log(amount);
