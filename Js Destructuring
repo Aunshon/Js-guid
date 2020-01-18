@@ -1,0 +1,180 @@
+  /*
+  Destructuring It’s a JavaScript expression that allows us to extract data from arrays, objects, maps and sets . OR
+  It allows us to extract properties from an object or items from an array, multiple at a time.
+  */
+
+  //basic Example : 
+
+let obj = {
+    name: "aunshon",
+    job: "Developer"
+}
+
+let { name, job } = obj;                      //use same variable as used in the object or will get error
+console.log(name);
+console.log(job);
+
+
+  /*
+  when variable is already been declared and we are going to extract values by that variabel
+  Example : 
+  */
+
+let obj = {
+    name: "aunshon",
+    job: "Developer"
+}
+let name = "dummy Name",job = "dummy job";    //name & job variable is declared before use or it can also be initialised and it will be over ridden while disreucting
+
+({ name, job } = obj);                        //to use those variable add () first brackets for whoel distructing section as showing
+console.log(name);
+console.log(job);
+
+
+/*
+  Extructing an object from another object by Distructing
+*/
+
+
+let obj = {
+    course: "premium",
+    duration: "10h",
+    data: {
+        user: {
+            name: "aunshon",
+            age: 50,
+            address: "Bangladesh"
+        },
+        qualification: {
+            ssc: "Magura",
+            hsc: "Dhaka",
+            graduation: "Dhaka"
+        }
+    }
+}
+
+let { course, data: { user } } = obj;           //when extructing object use the same object name and variable
+console.log(course);
+console.log(user.age);
+
+let { data: { qualification } } = obj;          //when extructing object use the same object name and variable
+console.log(qualification.hsc);
+
+
+/*
+use default value in distructing
+*/
+
+let obj = {
+    name: "aunshon",
+    age: "100"
+}
+
+let { name = "no Name", age = "0", job = "NO", ocupation = "No" } = obj;         //job & ocupation is not on obj so use default like this or it will return undefined
+console.log(name);
+console.log(age);
+console.log(job);
+console.log(ocupation);
+
+
+/*
+Dintructing in array
+*/
+
+let sub = ['bangla', 'english', 'math', 'science'];
+let [a, b, c] = sub;                                  //we are extracting array so we must use array like this
+
+console.log(a);
+console.log(b);
+
+//if we want to skip the elements in array and need to extracting last element
+
+let [ , , , last] = sub;
+console.log(last);
+
+/* 
+.............................conplex example.........................................
+*/
+
+let obj = {
+    course: "web",
+    duration: "10h",
+    user: {
+        name: "aunshon",
+        age: "100",
+        studing: "BSC",
+        visit: {
+            place: "USA",
+            when: "10-1-2020",
+            came: "11-2-2020"
+        }
+    },
+    certification: ['php', 'laravel', 'java', 'android']
+}
+
+let { user, user: { visit }, certification: [, , thirdData, ] } = obj;
+console.log(user.name);
+console.log(user.visit);
+console.log(visit);
+console.log(thirdData);
+/* 
+.............................conplex example.........................................
+*/
+
+
+/*
+.........................................................................
+......................Importand and very COMPLEX.........................
+.........................................................................
+*/
+/*
+.........................Distructing in function..................
+*/
+
+
+
+/* ..... Regular function ...... */
+
+function orderCheck(status, dataObject) {
+    let data = dataObject || {};                  //we are using default values , if empty comes in parameter the data will be an empty object || {}
+
+    console.log(status);
+    console.log(data);
+}
+orderCheck(true, { paymentBy: "Cash", name: "aun", amount: 1000 });
+
+/* ..... Regular function end ...... */
+
+
+/*...............................Distructing function.........................................*/
+
+
+function orderCheck(status, dataObject) {
+    let { paymentBy, name, amount =0  } = dataObject;         //using default value in amount
+    console.log(paymentBy);
+    console.log(name);
+    console.log(amount);
+
+}
+orderCheck(true, { paymentBy: "Cash", name: "aun", amount: 1000 });
+
+// in other way...................................
+
+
+function orderCheck(status, { paymentBy, name = "No Name", amount = 0 }) {      //using name and amount default value
+    console.log(paymentBy);
+    console.log(name);
+    console.log(amount);
+}
+
+orderCheck(true, { paymentBy: "Cash", name: "aun" });
+
+
+
+
+
+
+
+
+
+
