@@ -1,0 +1,32 @@
+/*
+  set is one kind of collection of variables or values like ARRAY or OBJECT
+  But the main difference between array or object and Set is  : Set does not aaccepts duplicate values
+  it ignores duplicate values
+*/
+
+/*
+  Example :
+*/
+
+
+let products = new Set();                          // creating object
+
+products.add('shirt');                             // adding values in the product set
+products.add("pant");
+products.add("bag");
+products.add("bag");
+
+console.log(products.size);                        // givs product set count or size
+console.log(products.has("pant"));                 // checking the value exists or not
+console.log(products.delete('pant'));              // deleting value from product set
+
+products.forEach(item => {                         // foreach can be applied as array or object
+    console.log(item);
+});
+
+let convertedToArray = [...products];               // Converting a set into array . Systex is [...setVariable]
+products.clear();                                   // set will be empty
+
+console.log(products);
+console.log(convertedToArray);
+console.log(typeof products);
