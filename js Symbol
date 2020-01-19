@@ -1,0 +1,85 @@
+/*
+The data type symbol is a primitive data type. The Symbol() function returns a value of type symbol, has static properties that expose
+several members of built-in objects, has static methods that expose the global symbol registry, and resembles a built-in object class,
+but is incomplete as a constructor because it does not support the syntax "new Symbol()".  
+
+Every symbol value returned from Symbol() is unique.  A symbol value may be used as an identifier for object properties; this is the data
+type's primary purpose, although other use-cases exist, such as enabling opaque data types, or serving as an implementation-supported
+unique identifier in general.  Some further explanation about purpose and usage can be found in the
+
+It was introduced in ECMAScript 2015, so just a few years ago.
+*/
+
+/*
+  How to create symbol
+*/
+
+let name = Symbol();              // new keywork not needed 
+let dis = Symbol("Description");  // in the bracket in symbol we can write any discription about this symbol
+
+console.log(name)                 // this will print  :- Symbol()
+console.log(dis)                 // this will print  :- Symbol(Description)
+
+/*
+  assign values in symbol
+*/
+
+let name = Symbol();              // declaring variables
+let job = Symbol();               // declaring variables
+
+let person = {}                   // say it is an empty object
+
+person[name] = "aunshon";         // inserting and assigning values in person object as a symbol type value name
+person[job] = "Developer";        // inserting and assigning values in person object as a symbol type value job
+
+console.log(person);              // It will show all the data there are in person object incouding symbol
+console.log(person[name]);        // To access the symbol type value use this syntex . porson.name will show undefined
+console.log(person[job]);         // To access the symbol type value use this syntex . porson.job will show undefined
+
+/*
+  Stmbol basic done
+*/
+
+/*
+  Complete Example: 
+*/
+
+
+
+let firstName = Symbol("firstName");
+let lastName = Symbol("lastName");
+
+let person = {};
+person.job = "WEB";
+person.gnader = "male";
+
+person[firstName] = "aunshon";
+person[lastName] = "hasan";
+
+console.log(person[firstName]);
+
+for (const key in person) {
+    console.log(person[key]);
+}
+
+console.log(firstName);
+console.log(lastName);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
