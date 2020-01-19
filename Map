@@ -1,0 +1,39 @@
+/*
+  Map is similar like Set but it stort data like key pair value system
+*/
+
+/*
+  Example : 
+*/
+
+
+let person = new Map();                       // creting map object
+person.set('name', 'aunshon');                // setting values on person map syntex is : variable.set('key','value')
+person.set('age', 50);
+person.set('address', 'Dhaka');
+
+console.log(person.get('name'));              // Retriving data from Map
+console.log(person.get('age'));
+console.log(person.has('address'));           // checking if the value is exists or not it returns true or false
+person.delete('age');                         // deleting a data form map 
+console.log(person.size);                     // getting the total sizeor lengthof the map 
+
+person.forEach(item => {                      // foreach can be used as array object or set
+    console.log(item);
+});
+
+console.log(person);        
+console.clear();                              // delete everithing form map
+
+
+let product = new Map([                       // default value can set in map, syntex : let variable = new Map( [ ['key','value'] , ['key','value'] ] );
+    ['name', "No Name"],
+    ['price', 0],
+    ['size', 'empty']
+]);
+
+console.log(product);
+
+product.set('name', 'Lenovo');                //here assining the value on name in map if we dont assing vaue name will print No Name
+
+console.log(product);
