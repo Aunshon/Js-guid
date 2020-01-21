@@ -1,0 +1,79 @@
+/*
+  Like for , foreach , while loops for of is another loop that is used in iterator and entries() function is the iterator catches the data
+  or extracts the data from the object in the for of loop
+*/
+
+// basic example of forof loop :
+
+
+for(let i of object.entries()) {              // entries() function can be used on the forof loop statement line 
+  console.log(i);                             // this line will print an object of two data , one is the key another is the value
+  console.log(i[0]);                          // to access the key of the result object
+  console.log(i[1]);                          // to access the value of the result object
+}
+
+
+
+// ............................
+
+
+let product = ['product1', 'product2', 'product3', 'product4', 'product5'];
+let citi = new Set(['one', 'two', 'three', 'four']);
+let month = new Map();
+month.set('first', 'january');
+month.set('two', 'february');
+month.set('three', 'march');
+month.set('four', 'april');
+
+for (const i of product.entries()) {
+    console.log(i[1]);                         
+}
+
+for (const i of citi.entries()) {
+    console.log(i);                           // we know this contains key value object in here citi is Set type, we dont give key on set but
+                                              // entries() iterator gives a key and key and value are same like (2) ["one", "one"] first one is key and second one is value
+}
+
+for (const i of month.entries()) {
+    console.log(i);
+}
+
+/*
+  But values or keys can also be accessed in a different way
+  ...... To access the value we can use values() insted of entries() funciton.......
+  ...... To  access key we can use key() insted of entries() funciton.......
+  
+  or if we dont use any of them like entries,values,keys on the forof statement we can assess the value
+  like for(const i of object){console.log(i)} this will return value for array , Map , Set , Collection of querySelectroAll or even
+  in a sentence
+  
+  Exampel: 
+*/
+
+
+for (const i of product.values()) {
+    console.log(i);
+}
+
+for (const i of citi.values()) {
+    console.log(i);
+}
+
+for (const i of month.keys()) {
+    console.log(i);
+}
+
+for (const i of month.values()) {
+    console.log(i);
+}
+for (const i of month) {
+    console.log(i);
+}
+
+
+
+
+
+
+
+
