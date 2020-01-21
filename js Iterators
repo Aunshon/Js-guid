@@ -1,0 +1,25 @@
+/*
+  Object that knows how to access items from a collection one at a time, while keeping track of its current position within that sequence.
+  An object that is returned by the iterable interface is also an iterator object.
+*/
+
+// Basic Example : 
+
+function createIterator (cart) {
+  let i = 0;
+  return nextProduct : funciton () {
+    let end = ( i >= cart.length );
+    let value  = !end ? cart[i++] : undefined ;
+    
+    return {
+      end : end,
+      value : value,
+    }
+  }
+}
+
+let products = [ 'product1' , 'product2' , 'product3' ,'product4' ];
+
+let singleProdutct = createIterator(products);
+
+console.log(singleProdutct.nextProduct);
