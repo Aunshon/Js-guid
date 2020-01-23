@@ -1,0 +1,108 @@
+/*
+  \d means any digin like 0,1,2...9 
+  
+  \d+ means moltiple digits like insted of \d\d\d\d use \d+ 
+  
+  /[^0-9]/ means not 0 to 9 so this will accept acCD or laters
+  
+  \d{1,2} means number can be minimum 1 time and maximum 2 times
+  
+  ([0-5]) number can be accepterd form 0 to 5
+
+
+
+
+
+
+
+*/
+
+
+
+
+
+
+let exp1 = new RegExp('/abc/'),
+    exp2 = /abc/,
+    exp3 = /[0-9]/;
+
+
+console.log(typeof exp1);
+console.log(typeof exp2);
+let myYear = 2020;
+console.log(exp3.test(myYear));
+
+/* 
+    Basic date pattern checker
+*/
+
+let dateEcpression = /\d\d-\d\d-\d\d\d\d/; // \d means any digin like 0,1,2...9 
+let myDate = "26-06-1996";
+let myDate1 = "26:06-1996";
+console.log(dateEcpression.test(myDate)); // result true
+console.log(dateEcpression.test(myDate1)); // result : false
+
+let timeExpression = /\d\d:\d\d/;
+let theTime = '10:00';
+console.log(timeExpression.test(theTime));
+
+
+// time pattern with AM PM
+
+let expression = /\d\d:\d\d \D\D/;
+let demoTime = "12:12 AM";
+console.log(expression.test(demoTime));
+
+let expression = /\d+/; // \d+ means moltiple digits like insted of \d\d\d\d use \d+ 
+let mydigit = "111";
+console.log(expression.test(mydigit));
+
+///////// not sign
+
+let exp1 = /[^0-9]/;
+let number = "asdsad";
+console.log(exp1.test(number));
+
+/**
+ * Limit \d{1,2} means number can be minimum 1 time and maximum 2 times
+ */
+
+let exp1 = /\d{1,2}-\d{1,2}-\d{2,4}/;
+let number = "10-12-1212";
+console.log(exp1.test(number));
+
+/**
+ * \w is number or letter only not exceptional sign like "@","!","$","#" 
+ * but "hello@gmail" will return true cos it will bocome a sentance
+ */
+
+let expression = /\w+/;
+
+let msg = "asdf"; // true
+msg = 12; // true
+msg = "@"; // false
+msg = "adas@"; // true
+console.log(expression.test(msg));
+
+/**
+ * ..... Range  ([0-5]) number can be accepterd form 0 to 5
+ */
+
+let expression = /([0-9])\d/;
+
+let value = 123421321468908768;
+console.log(expression.test(value));
+
+
+
+let expression = /([A-Z])\w+/;
+
+let value = 'AASAS';
+console.log(expression.test(value));
+
+
+
+let expression = /([a-z])\w+/;
+
+let value = 'vdfv';
+console.log(expression.test(value));
