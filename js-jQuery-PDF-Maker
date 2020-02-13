@@ -1,0 +1,16 @@
+// First add the jquery cdn in your file then add the following code
+// add the id ( printMe ) to the section or div or table that you want 
+// to print or make PDF
+
+// jquery download link:- https://jquery.com/download/
+// jQuery CDN script : <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+function makePdf(){
+  let printMe = document.getElementById('printMe');
+  let win = window.open("","","width:700","height:900");
+  win.document.write(printMe.outerHTML);
+  win.document.close();
+  win.focus();
+  win.print();
+  win.close();
+}
