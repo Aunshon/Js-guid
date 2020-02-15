@@ -1,0 +1,115 @@
+Convert number to string : 
+Stirng(variable);
+Variable.toString();
+To know valriable type : Console.logd(typeof variable);
+Convert string to number :
+parseInt(variable);
+Number(variable);
+ParseFloat() :
+To take 2/3/more number after point on float use variable.toFixed(2);
+To Know a String Length:
+Use variable.length
+Ex : console.log(variable.length);
+To find some words into a sentence or string :
+Use variable.includes();
+Ex : console.log(string_variable.includes(‘word’));
+To check it is an array or not :
+Array.isArray(variable);
+Convert a acollection to an array :
+let images = document.images;
+
+let collection = Array.from(images);
+collection.forEach(function(data){
+
+    console.log(data.currentSrc);
+});
+
+Useful methods :
+Change a value on array : variable[ index ] = “ data ” ;
+To know the index of a data : variable . indexOf(data);
+Add a new data into the array (end of the array) : variable . push(“ data “);
+Add a new data into the array (beginning of the array ) : variable . unshift(“ data “);
+Add a new data into the array ( middle of the array ) : variable . splice( ‘ index ‘ , null , ‘ data ‘  );
+
+Remove data from the array ( from beginning ) : variable . shift();
+Remove data from the array ( from end ) : variable . pop();
+Remove data form the array ( from middle or any where ) : variable . splice( index , how_many_data);
+To swap last and first value in the array : variable.reverse();
+To concat two array : variable1 . concat( variable2 );
+To sort array in ascending order :  variable . sort();
+To sort array in descending order : variable . sort() . reverse();
+Sort number from Lower to greater : variable . sort( function ( number1 , number2 ) {
+Return number1 – number2} );
+Sort number from Greater to lower : variable . sort( function ( number1 , number2 ) {
+Return number2 – numbe1} );
+
+Js Object:
+const obj={
+    name : "aunshon",
+    college : "borhanuddin",
+    school : "magira Govt. School",
+    age : 23,
+    foods : ['meat',"egg",'rise'],
+    car : {
+        model : "aventedor",
+        name : "lambergini",
+        plate : "00-11-88"
+   },
+   getAge : function(){
+                return new Date().getFullYear() - this.age;
+   }
+
+}
+
+console.log(obj.name);
+console.log(obj.foods[1]);
+console.log(obj.car.name);
+console.log(obj.getAge());
+
+Js DOM Document Object Model:
+Document
+Document.all;
+Document.all[0];
+
+Document.head;
+Document.title;
+Document.domain;
+Document.URL;
+
+Document.links;
+Document.links[2].id;
+Document.links[2].className;
+Document.links[2].classList;
+
+Document.images;
+
+Document.scripts;
+Document.scripts[0].getAttribute(‘ src ’);
+
+Document.getElementById(id_name);
+To change the css in the html by js : 
+Use : Document.getElementById(id_name) .style . background = ‘ #333 ’;
+Document.getElementById(id_name) . style . color = ‘#ffffff’;
+Document.getElementById(id_name) . style . padding =  ‘ 10px ‘;
+To chang the text of a tag : document . getElementById (id_name) . textContent = “ new text “ ;
+Or , 
+document . getElementById (id_name) . innerText = “ new text “ ;
+to catch an element or tag in the html ( tag) to change or manipulate one way is catch by getElementById or use querySelector 
+querySelector has a rule , it can catch an element by id or class or tag name both and the catching system like similar to CSS like :
+for id : document . querySelector ( ‘ #id_name ‘);
+for class : document . querySelector ( ‘ .class_name ‘) ;
+ for tag : document . querySelector ( ‘ tag ‘ ) ;
+
+to change or replace an specific word or letter in a sentence :
+use : document . querySelector ( ‘ #id_name ‘) . replace( ‘ new_word_or_letter ’ , ‘ old_word_or_letter ‘ );
+querySelector hosds only one element , means if multiple elements have the same name and querySelector( ‘ .class_name ‘ ) will hold only the first element among them .
+querySelector has an ability called nest selector
+like : document . querySelector ( ‘ .class_name  img/h1/p ‘) ;
+
+to catch another or any element using querySelector that have the same class name :
+first one: document . querySelector ( ‘ .className a:first-child ’ );
+last one: document . querySelector ( ‘ .className a:last-child ’ );
+any one:document . querySelector ( ‘ .className a:nth-child(2/3/4/5) ’ );
+
+catch multiple elements by querySelector :
+
